@@ -33,10 +33,10 @@
     // Features that can be globally enabled or disabled
     "features": {
         // Which edit prediction provider to use.
-        "edit_prediction_provider": "zed"
+        "edit_prediction_provider": "copilot"
     },
     // The name of a font to use for rendering text in the editor
-    "buffer_font_family": "Zed Plex Mono",
+    "buffer_font_family": "Dank Mono",
     // Set the buffer text's font fallbacks, this will be merged with
     // the platform's default fallbacks.
     "buffer_font_fallbacks": null,
@@ -46,7 +46,7 @@
         // "calt": false
     },
     // The default font size for text in the editor
-    "buffer_font_size": 15,
+    "buffer_font_size": 16,
     // The weight of the editor font in standard CSS units from 100 to 900.
     "buffer_font_weight": 400,
     // Set the buffer's line height.
@@ -194,7 +194,7 @@
     "lsp_highlight_debounce": 75,
     // Whether to pop the completions menu while typing in an editor without
     // explicitly requesting it.
-    "show_completions_on_input": true,
+    "show_completions_on_input": false,
     // Whether to display inline and alongside documentation for items in the
     // completions menu
     "show_completion_documentation": true,
@@ -620,7 +620,16 @@
         // Default width of the notification panel.
         "default_width": 380
     },
-    "assistant": {
+    "agent": {
+        "always_allow_tool_actions": true,
+        "single_file_review": false,
+        "default_model": {
+            "provider": "copilot_chat",
+            "model": "gpt-4o"
+        },
+        "version": "2"
+    },
+    "agent": {
         // Version of this setting.
         "version": "2",
         // Whether the assistant is enabled.
@@ -636,9 +645,9 @@
         // The default model to use when creating new chats.
         "default_model": {
             // The provider to use.
-            "provider": "zed.dev",
+            "provider": "copilot_chat",
             // The model to use.
-            "model": "claude-3-7-sonnet-latest"
+            "model": "gpt-4o"
         },
         // The model to use when applying edits from the assistant.
         "editor_model": {
@@ -661,7 +670,7 @@
                     "fetch": true,
                     "list_directory": false,
                     "now": true,
-                    "path_search": true,
+                    "find_path": true,
                     "read_file": true,
                     "grep": true,
                     "thinking": true,
@@ -685,7 +694,7 @@
                     "list_directory": true,
                     "move_path": false,
                     "now": false,
-                    "path_search": true,
+                    "find_path": true,
                     "read_file": true,
                     "grep": true,
                     "rename": false,
@@ -993,7 +1002,7 @@
         "mode": "eager",
         // Whether edit predictions are enabled in the assistant panel.
         // This setting has no effect if globally disabled.
-        "enabled_in_assistant": true
+        "enabled_in_text_threads": true
     },
     // Settings specific to journaling
     "journal": {
@@ -1015,15 +1024,16 @@
         //        "program": "sh"
         //      }
         // 3. A program with arguments:
-        //     "shell": {
-        //         "with_arguments": {
-        //           "program": "/bin/bash",
-        //           "args": ["--login"]
-        //         }
+        // "shell": {
+        //     "with_arguments": {
+        //         "program": "/bin/bash",
+        //         "args": ["--login"]
         //     }
+        // }
         "shell": "system",
         // Where to dock terminals panel. Can be `left`, `right`, `bottom`.
         "dock": "bottom",
+        "font_family": "MesloLGL Nerd Font",
         // Default width when the terminal is docked to the left or right.
         "default_width": 640,
         // Default height when the terminal is docked to the bottom.
