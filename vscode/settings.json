@@ -104,9 +104,9 @@
   "editor.overviewRulerBorder": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.quickSuggestions": {
-    "other": "on"
+    "other": "inline"
   },
-  "editor.suggestOnTriggerCharacters": false,
+  "editor.suggestOnTriggerCharacters": true,
   "editor.tabCompletion": "on",
   "editor.snippetSuggestions": "top",
   "emmet.triggerExpansionOnTab": true,
@@ -127,5 +127,7 @@
     "editor.insertSpaces": true,
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "golang.go"
-  }
+  },
+  "git.enableSmartCommit": true,
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }
