@@ -1,0 +1,37 @@
+# Cmd for use-node-version
+chmod +x ~/use-node-version.sh
+
+# Auto-switch Node.js version using .node-version or .nvmrc when changing directories
+
+autoload -U add-zsh-hook
+
+use_node_version() {
+  if [ -f "$HOME/use-node-version.sh" ]; then
+    source "$HOME/use-node-version.sh"
+  fi
+}
+
+add-zsh-hook chpwd use_node_version
+use_node_version
+
+source ~/.zshrc
+
+# ----------------------------------------------------------------------------------------
+
+# Cmd for use-php-version
+chmod +x ~/use-php-version.sh
+
+# Auto-switch PHP version using .php-version when changing directories
+
+autoload -U add-zsh-hook
+
+use_php_version() {
+  if [ -f "$HOME/use-php-version.sh" ]; then
+    source "$HOME/use-php-version.sh"
+  fi
+}
+
+add-zsh-hook chpwd use_php_version
+use_php_version
+
+source ~/.zshrc
